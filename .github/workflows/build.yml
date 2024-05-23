@@ -18,7 +18,7 @@ jobs:
   build-linux:
     if: ${{ github.event.inputs.job == 'build-linux' || github.event_name != 'workflow_dispatch' }}
     name: Build Linux
-    runs-on: ubuntu-20
+    runs-on: ubuntu-20.04
     permissions:
       contents: write
     strategy:
