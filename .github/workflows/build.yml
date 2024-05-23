@@ -8,9 +8,15 @@ on:
     branches:
       - master
   workflow_dispatch:
+    inputs:
+      job:
+        description: 'Job to run'
+        required: true
+        default: 'build-linux'
 
 jobs:
   build-linux:
+    if: ${{ github.event.inputs.job == 'build-linux' || github.event_name != 'workflow_dispatch' }}
     name: Build Linux
     runs-on: ubuntu-latest
     permissions:
@@ -51,6 +57,7 @@ jobs:
         artifacts: "linux_treesheets_${{ matrix.cxx }}.zip"
 
   build-windows:
+    if: ${{ github.event.inputs.job == 'build-windows' || github.event_name != 'workflow_dispatch' }}   
     name: Build Windows
     runs-on: windows-2022
     permissions:
@@ -100,6 +107,7 @@ jobs:
         artifacts: "windows_treesheets_setup.exe,windows_treesheets_no_installer.zip"
 
   build-mac:
+    if: ${{ github.event.inputs.job == 'build-mac' || github.event_name != 'workflow_dispatch' }}
     name: Build Mac
     runs-on: macos-latest
     permissions:
