@@ -28,7 +28,7 @@ jobs:
     - name: Setup cmake
       uses: jwlawson/actions-setup-cmake@v2
       with:
-        cmake-version: '3.25.x'
+        cmake-version: '3.29.3'
     - uses: actions/checkout@v4
     - name: apt update
       run: sudo apt-get -o Acquire::Retries=3 update
