@@ -59,7 +59,7 @@ jobs:
         allowUpdates: true
         omitBody: true
         commit: master
-        artifacts: "linux_treesheets_${{ matrix.cxx }}.zip"
+        artifacts: "linux_treesheets_${{ matrix.cxx }}_cmake${{ matrix.cmake }}.zip"
 
   build-windows:
     if: ${{ github.event.inputs.job == 'build-windows' || github.event_name != 'workflow_dispatch' }}   
