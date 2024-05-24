@@ -128,10 +128,10 @@ target_link_libraries(
 # make[1]: *** [CMakeFiles/Makefile2:449: CMakeFiles/treesheets.dir/all] Error 2
 # make: *** [Makefile:136: all] Error 2
 
-if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
-    find_package(X11 REQUIRED) 
-    target_link_libraries(treesheets PRIVATE ${X11_LIBRARIES})  
-endif()
+# if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+#    find_package(X11 REQUIRED) 
+#    target_link_libraries(treesheets PRIVATE ${X11_LIBRARIES})  
+# endif()
 
 ########## TREESHEETS INSTALLATION SETTINGS ###############
 
